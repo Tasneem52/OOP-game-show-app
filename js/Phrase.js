@@ -28,13 +28,13 @@ class Phrase {
 
   // Reveals the letter(s) on the board that matches the player's selection.
   showMatchedLetter(letter) {
-      let phraseLetters = document.getElementsByClassName('letter');
-      for (let i = 0; i < phraseLetters.length; i++) {
-        // When the player correctly guesses a letter, the empty box
-        // is replaced with the matched letter
-        if(phraseLetters[i].textContent === letter) {
+    let phraseLetters = document.getElementsByClassName('letter');
+    for (let i = 0; i < phraseLetters.length; i++) {
+      // When the player correctly guesses a letter, the empty box
+      // is replaced with the matched letter
+      if(phraseLetters[i].textContent === letter) {
           phraseLetters[i].className = 'show letter';
-        }
       }
+    }
   }
 };

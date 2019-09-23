@@ -4,7 +4,7 @@
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
+  --color-win: #588c7e;
   --color-lose: #D94545;
   --color-start: #5b85b7;
   --color-neutral: #445069;
@@ -37,6 +37,7 @@ li, ol, ul {
 
 h2 {
   margin: 0;
+  text-align: center;
   text-transform: uppercase;
   font-size: var(--font-size-large);
   margin: 0;
@@ -44,6 +45,7 @@ h2 {
 
 h1 {
   font-size: 30px;
+  text-align: center;
 }
 
 button {
@@ -180,7 +182,7 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #957DAD;
 }
 
 .start a {
@@ -196,7 +198,7 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: #eca1a6;
 }
 
 .lose a {
