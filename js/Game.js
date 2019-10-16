@@ -29,27 +29,8 @@ class Game {
     return this.phrases[randPhrase];
   }
 
-  // This method checks to see if the button clicked by the player matches a letter in the phrase, and then directs the game based on a correct or incorrect guess
-  handleInteractions(event) {
-    // Disable the selected letter’s onscreen keyboard button.
-    const letter = event.target.textContent;
-    event.target.disabled = true;
-
-    // If the phrase includes the guessed letter, add the chosen CSS class to the selected letter's keyboard button and call the showMatchedLetter() method on the phrase.
-    if(this.activePhrase.checkLetter(letter)){
-      event.target.className = 'key chosen'
-      this.activePhrase.showMatchedLetter(letter);
-      if (this.checkForWin()) {
-        this.gameOver('win');
-      }
-    } else {
-      //If the phrase does not include the guessed letter, add the wrong CSS class to the selected letter's keyboard button and call the removeLife() method.
-      event.target.className = 'key wrong'
-      this.removeLife();
-    }
-  }
-
-  handleInteractionss(letter) {
+  // This method checks to see if the button clicked or key pressed by the player matches a letter in the phrase, and then directs the game based on a correct or incorrect guess
+  handleInteractions(letter) {
     const keyElements = document.querySelectorAll('.key');
     let matchedIndex = 0;
     for (let i = 0; i < keyElements.length; i++) {
@@ -64,7 +45,6 @@ class Game {
 
     // If the phrase includes the guessed letter, add the chosen CSS class to the selected letter's keyboard button and call the showMatchedLetter() method on the phrase.
     if(this.activePhrase.checkLetter(letter)){
-      //event.target.className = 'key chosen'
       keyElements[matchedIndex].className = 'key chosen';
       this.activePhrase.showMatchedLetter(letter);
       if (this.checkForWin()) {
@@ -72,7 +52,6 @@ class Game {
       }
     } else {
       //If the phrase does not include the guessed letter, add the wrong CSS class to the selected letter's keyboard button and call the removeLife() method.
-      //event.target.className = 'key wrong';
       keyElements[matchedIndex].className = 'key wrong';
       this.removeLife();
     }

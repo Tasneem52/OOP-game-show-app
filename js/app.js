@@ -19,7 +19,7 @@ const keyElement = document.getElementById('qwerty');
 // Event listener for keyboard click.
 keyElement.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
-    game.handleInteractionss(e.target.textContent);
+    game.handleInteractions(e.target.textContent);
   }
 })
 
@@ -29,7 +29,7 @@ document.addEventListener('keypress', (e) => {
   if (alphabetRegex.test(e.key) && e.key != 'Enter') {
     if (!keysPressed.includes(e.key.toLowerCase())) {
       keysPressed.push(e.key.toLowerCase())
-      game.handleInteractionss(e.key.toLowerCase());
+      game.handleInteractions(e.key.toLowerCase());
     }
   }
 });
